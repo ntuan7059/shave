@@ -5,27 +5,31 @@ const ProductSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "user",
 	},
-	Product: [
+	eachProduct: [
 		{
 			title: {
 				type: String,
 				required: true,
 			},
 			price: {
-				type: Number,
+				type: String,
 				required: true,
 			},
 			location: {
 				type: String,
 				required: true,
 			},
+			image: {
+				type: String,
+				required: true,
+			},
 			rate: {
-				type: Number,
+				type: String,
 				default: 5,
 			},
 			category: {
 				type: String,
-				required: True,
+				required: true,
 			},
 			tag: {
 				type: [String],
@@ -34,4 +38,4 @@ const ProductSchema = new mongoose.Schema({
 		},
 	],
 });
-module.exports = Product = mongoose.model("product", UserSchema);
+module.exports = Product = mongoose.model("product", ProductSchema);
